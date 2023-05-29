@@ -22,7 +22,7 @@ class ApiService{
       'Accept': 'application/json',
     };
 
-    //Initializing body for rquest
+    //Initializing body for request
     final body = jsonEncode({
       'email': email,
       'password': password,
