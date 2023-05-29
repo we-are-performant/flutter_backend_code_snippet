@@ -11,6 +11,7 @@ class PackageList{
   static double totalPartnerAmount = 0;
   static String? token;
 
+  //Convert PackageList object to json
   static Map<String, dynamic> toJson() => {
     "date": DateFormat('dd-MM-yyyy').format(date!),
     "time": time,
