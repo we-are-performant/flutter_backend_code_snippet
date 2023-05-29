@@ -1,3 +1,4 @@
+//User object class
 class User {
   int? userId;
   String? firstName;
@@ -8,9 +9,12 @@ class User {
   int? emailVerification;
   String? lang;
 
+  //User constructor pass data fields
   User(
       {this.userId, this.firstName, this.lastName, this.contactNo, this.email,this.deviceToken,this.emailVerification});
+  
 
+  //Convert json response to user object
   User.fromJson(Map<String, dynamic> json) {
     userId = json['user_id'];
     firstName = json['first_name'];
@@ -21,6 +25,7 @@ class User {
     lang = json['lang'];
   }
 
+  //Convert user object to json object
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['user_id'] = userId;
