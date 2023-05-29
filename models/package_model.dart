@@ -1,7 +1,7 @@
 List<PackageModel> packageFromJson(List<dynamic> str) => List<PackageModel>.from(str.map((x) => PackageModel.fromJson(x)));
+
+
 class PackageModel{
-
-
   String? serviceName;
   String? packageSize;
   String? scanData;
@@ -17,6 +17,7 @@ class PackageModel{
     partnerAmt = partnerAmt;
   }
 
+  //Constructor 
   PackageModel({
     this.serviceName,
     this.packageSize,
@@ -53,6 +54,7 @@ class PackageModel{
   }
 
 
+  //Convert json object to Package
   factory PackageModel.fromJson(Map<String, dynamic> json) => PackageModel(
     serviceName: json["service_name"],
     packageSize: json["package_size"],
@@ -64,6 +66,7 @@ class PackageModel{
     remarks: json["remarks"]
   );
 
+  //Convert package to json object
   Map<String, dynamic> toJson() => {
     "shipping_service": serviceName,
     "package_size": packageSize,
