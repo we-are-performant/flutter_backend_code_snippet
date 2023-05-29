@@ -5,6 +5,7 @@ class LoginResponse {
   String? accessToken;
   String? status;
   String? message;
+  //Constructor to initialize
   LoginResponse({
       required this.user,
       required this.accessToken,
@@ -12,6 +13,7 @@ class LoginResponse {
       required this.message
    });
 
+  //Convert json object to login response
   LoginResponse.fromJson(dynamic json) {
 
     user = json['user'] != null ? User.fromJson(json['user']) : null;
@@ -21,6 +23,7 @@ class LoginResponse {
   }
 
 
+  //Convert login response to json object 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
     if (user != null) {
