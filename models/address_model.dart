@@ -2,6 +2,8 @@
 import 'dart:convert' show json;
 
 List<Address> addressFromJson(String str) => List<Address>.from(json.decode(str).map((x) => Address.fromJson(x)));
+
+//Address model class 
 class Address {
   int? addId;
   int? userId;
@@ -15,6 +17,7 @@ class Address {
   Address(
       {this.addId,this.userId,this.address, this.streetNo, this.appartmentNo, this.lattitude, this.longitude,this.primaryAddress});
 
+  //Convert json object to Address object
   Address.fromJson(Map<String, dynamic> json) {
     addId = json['add_id'];
     userId = json['user_id'];
@@ -26,6 +29,7 @@ class Address {
     primaryAddress =((json['primary_address']) == 1)?true:false;
   }
 
+  //Convert Address object to json object
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['add_id'] = addId;
